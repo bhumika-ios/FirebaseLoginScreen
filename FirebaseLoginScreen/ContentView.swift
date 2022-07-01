@@ -163,7 +163,13 @@ struct Login : View{
     }
     func verify(){
         if self.email != "" && self.pass != ""{
-            Auth.auth().signIn(withEmail: <#T##String#>, password: <#T##String#>)
+            Auth.auth().signIn(withEmail: self.email, password: self.pass){ (res, err) in
+                if err != nil{
+                    self.error = err!.localizedDescription
+                    self.alert.toggle()
+                }
+                print("success")
+            }
             
         }else{
             self.error = "Please enter all the content properly"
