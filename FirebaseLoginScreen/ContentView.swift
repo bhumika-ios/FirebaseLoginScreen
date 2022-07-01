@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     @State private var isLogged: Bool = false
@@ -122,7 +123,7 @@ struct Login : View{
                                 Button {
                                     
                                     // check email and password empty
-                                  //  self.verify()
+                                   self.verify()
                                    
                                 } label: {
                                     
@@ -162,6 +163,7 @@ struct Login : View{
     }
     func verify(){
         if self.email != "" && self.pass != ""{
+            Auth.auth().signIn(withEmail: <#T##String#>, password: <#T##String#>)
             
         }else{
             self.error = "Please enter all the content properly"
