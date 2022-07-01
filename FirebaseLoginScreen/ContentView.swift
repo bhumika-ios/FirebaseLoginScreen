@@ -198,6 +198,7 @@ struct Login : View{
                 if err != nil{
                     self.error = err!.localizedDescription
                     self.alert.toggle()
+                    return
                 }
                 print("success")
                 UserDefaults.standard.set(true, forKey: "status")
@@ -349,7 +350,19 @@ struct Register : View{
     func register(){
         if self.email != ""{
             if self.pass == self.repass{
-                
+                Auth.auth().createUser(withEmail: self.email, password: self.pass){ (res, err) in
+                    if err != nil{
+                        //self.error = err!.localizedDescription
+                        self.error = "Create Successfully"
+                        self.alert.toggle()
+                        
+                        return
+                    }
+                    print("success")
+                    
+//                    UserDefaults.standard.set(true, forKey: "status")
+//                    NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
+                }
             }else{
                 self.error = "Password mismatch"
                 self.alert.toggle()
@@ -368,7 +381,7 @@ struct ErrorView : View{
         GeometryReader{_ in
             VStack{
                 HStack{
-                    Text("Error")
+                    Text("")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(self.color)
