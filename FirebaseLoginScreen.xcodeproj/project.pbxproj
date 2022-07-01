@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC4AEDC7286ED06100565534 /* FirebaseLoginScreenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4AEDC6286ED06100565534 /* FirebaseLoginScreenApp.swift */; };
+		AC4AEDC9286ED06100565534 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4AEDC8286ED06100565534 /* ContentView.swift */; };
+		AC4AEDCB286ED06300565534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4AEDCA286ED06300565534 /* Assets.xcassets */; };
+		AC4AEDCE286ED06300565534 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4AEDCD286ED06300565534 /* Preview Assets.xcassets */; };
+		AC4AEDD8286ED06300565534 /* FirebaseLoginScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4AEDD7286ED06300565534 /* FirebaseLoginScreenTests.swift */; };
+		AC4AEDE2286ED06300565534 /* FirebaseLoginScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4AEDE1286ED06300565534 /* FirebaseLoginScreenUITests.swift */; };
+		AC4AEDE4286ED06300565534 /* FirebaseLoginScreenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4AEDE3286ED06300565534 /* FirebaseLoginScreenUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC4AEDD4286ED06300565534 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC4AEDBB286ED06100565534 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC4AEDC2286ED06100565534;
+			remoteInfo = FirebaseLoginScreen;
+		};
+		AC4AEDDE286ED06300565534 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC4AEDBB286ED06100565534 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC4AEDC2286ED06100565534;
+			remoteInfo = FirebaseLoginScreen;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC4AEDC3286ED06100565534 /* FirebaseLoginScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseLoginScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC4AEDC6286ED06100565534 /* FirebaseLoginScreenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginScreenApp.swift; sourceTree = "<group>"; };
+		AC4AEDC8286ED06100565534 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AC4AEDCA286ED06300565534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC4AEDCD286ED06300565534 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC4AEDD3286ED06300565534 /* FirebaseLoginScreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseLoginScreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC4AEDD7286ED06300565534 /* FirebaseLoginScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginScreenTests.swift; sourceTree = "<group>"; };
+		AC4AEDDD286ED06300565534 /* FirebaseLoginScreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseLoginScreenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC4AEDE1286ED06300565534 /* FirebaseLoginScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginScreenUITests.swift; sourceTree = "<group>"; };
+		AC4AEDE3286ED06300565534 /* FirebaseLoginScreenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginScreenUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC4AEDC0286ED06100565534 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC4AEDD0286ED06300565534 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC4AEDDA286ED06300565534 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC4AEDBA286ED06100565534 = {
+			isa = PBXGroup;
+			children = (
+				AC4AEDC5286ED06100565534 /* FirebaseLoginScreen */,
+				AC4AEDD6286ED06300565534 /* FirebaseLoginScreenTests */,
+				AC4AEDE0286ED06300565534 /* FirebaseLoginScreenUITests */,
+				AC4AEDC4286ED06100565534 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC4AEDC4286ED06100565534 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC4AEDC3286ED06100565534 /* FirebaseLoginScreen.app */,
+				AC4AEDD3286ED06300565534 /* FirebaseLoginScreenTests.xctest */,
+				AC4AEDDD286ED06300565534 /* FirebaseLoginScreenUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC4AEDC5286ED06100565534 /* FirebaseLoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AC4AEDC6286ED06100565534 /* FirebaseLoginScreenApp.swift */,
+				AC4AEDC8286ED06100565534 /* ContentView.swift */,
+				AC4AEDCA286ED06300565534 /* Assets.xcassets */,
+				AC4AEDCC286ED06300565534 /* Preview Content */,
+			);
+			path = FirebaseLoginScreen;
+			sourceTree = "<group>";
+		};
+		AC4AEDCC286ED06300565534 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AC4AEDCD286ED06300565534 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AC4AEDD6286ED06300565534 /* FirebaseLoginScreenTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC4AEDD7286ED06300565534 /* FirebaseLoginScreenTests.swift */,
+			);
+			path = FirebaseLoginScreenTests;
+			sourceTree = "<group>";
+		};
+		AC4AEDE0286ED06300565534 /* FirebaseLoginScreenUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AC4AEDE1286ED06300565534 /* FirebaseLoginScreenUITests.swift */,
+				AC4AEDE3286ED06300565534 /* FirebaseLoginScreenUITestsLaunchTests.swift */,
+			);
+			path = FirebaseLoginScreenUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC4AEDC2286ED06100565534 /* FirebaseLoginScreen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC4AEDE7286ED06300565534 /* Build configuration list for PBXNativeTarget "FirebaseLoginScreen" */;
+			buildPhases = (
+				AC4AEDBF286ED06100565534 /* Sources */,
+				AC4AEDC0286ED06100565534 /* Frameworks */,
+				AC4AEDC1286ED06100565534 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FirebaseLoginScreen;
+			productName = FirebaseLoginScreen;
+			productReference = AC4AEDC3286ED06100565534 /* FirebaseLoginScreen.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC4AEDD2286ED06300565534 /* FirebaseLoginScreenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC4AEDEA286ED06300565534 /* Build configuration list for PBXNativeTarget "FirebaseLoginScreenTests" */;
+			buildPhases = (
+				AC4AEDCF286ED06300565534 /* Sources */,
+				AC4AEDD0286ED06300565534 /* Frameworks */,
+				AC4AEDD1286ED06300565534 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC4AEDD5286ED06300565534 /* PBXTargetDependency */,
+			);
+			name = FirebaseLoginScreenTests;
+			productName = FirebaseLoginScreenTests;
+			productReference = AC4AEDD3286ED06300565534 /* FirebaseLoginScreenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AC4AEDDC286ED06300565534 /* FirebaseLoginScreenUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC4AEDED286ED06300565534 /* Build configuration list for PBXNativeTarget "FirebaseLoginScreenUITests" */;
+			buildPhases = (
+				AC4AEDD9286ED06300565534 /* Sources */,
+				AC4AEDDA286ED06300565534 /* Frameworks */,
+				AC4AEDDB286ED06300565534 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC4AEDDF286ED06300565534 /* PBXTargetDependency */,
+			);
+			name = FirebaseLoginScreenUITests;
+			productName = FirebaseLoginScreenUITests;
+			productReference = AC4AEDDD286ED06300565534 /* FirebaseLoginScreenUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC4AEDBB286ED06100565534 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					AC4AEDC2286ED06100565534 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					AC4AEDD2286ED06300565534 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = AC4AEDC2286ED06100565534;
+					};
+					AC4AEDDC286ED06300565534 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = AC4AEDC2286ED06100565534;
+					};
+				};
+			};
+			buildConfigurationList = AC4AEDBE286ED06100565534 /* Build configuration list for PBXProject "FirebaseLoginScreen" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC4AEDBA286ED06100565534;
+			productRefGroup = AC4AEDC4286ED06100565534 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC4AEDC2286ED06100565534 /* FirebaseLoginScreen */,
+				AC4AEDD2286ED06300565534 /* FirebaseLoginScreenTests */,
+				AC4AEDDC286ED06300565534 /* FirebaseLoginScreenUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC4AEDC1286ED06100565534 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC4AEDCE286ED06300565534 /* Preview Assets.xcassets in Resources */,
+				AC4AEDCB286ED06300565534 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC4AEDD1286ED06300565534 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC4AEDDB286ED06300565534 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC4AEDBF286ED06100565534 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC4AEDC9286ED06100565534 /* ContentView.swift in Sources */,
+				AC4AEDC7286ED06100565534 /* FirebaseLoginScreenApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC4AEDCF286ED06300565534 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC4AEDD8286ED06300565534 /* FirebaseLoginScreenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC4AEDD9286ED06300565534 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC4AEDE2286ED06300565534 /* FirebaseLoginScreenUITests.swift in Sources */,
+				AC4AEDE4286ED06300565534 /* FirebaseLoginScreenUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC4AEDD5286ED06300565534 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC4AEDC2286ED06100565534 /* FirebaseLoginScreen */;
+			targetProxy = AC4AEDD4286ED06300565534 /* PBXContainerItemProxy */;
+		};
+		AC4AEDDF286ED06300565534 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC4AEDC2286ED06100565534 /* FirebaseLoginScreen */;
+			targetProxy = AC4AEDDE286ED06300565534 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AC4AEDE5286ED06300565534 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC4AEDE6286ED06300565534 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC4AEDE8286ED06300565534 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FirebaseLoginScreen/Preview Content\"";
+				DEVELOPMENT_TEAM = LU893QGJWJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.FirebaseLoginScreen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC4AEDE9286ED06300565534 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FirebaseLoginScreen/Preview Content\"";
+				DEVELOPMENT_TEAM = LU893QGJWJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.FirebaseLoginScreen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AC4AEDEB286ED06300565534 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LU893QGJWJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.FirebaseLoginScreenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FirebaseLoginScreen.app/FirebaseLoginScreen";
+			};
+			name = Debug;
+		};
+		AC4AEDEC286ED06300565534 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LU893QGJWJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.FirebaseLoginScreenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FirebaseLoginScreen.app/FirebaseLoginScreen";
+			};
+			name = Release;
+		};
+		AC4AEDEE286ED06300565534 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LU893QGJWJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.FirebaseLoginScreenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FirebaseLoginScreen;
+			};
+			name = Debug;
+		};
+		AC4AEDEF286ED06300565534 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LU893QGJWJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.FirebaseLoginScreenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FirebaseLoginScreen;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC4AEDBE286ED06100565534 /* Build configuration list for PBXProject "FirebaseLoginScreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC4AEDE5286ED06300565534 /* Debug */,
+				AC4AEDE6286ED06300565534 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC4AEDE7286ED06300565534 /* Build configuration list for PBXNativeTarget "FirebaseLoginScreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC4AEDE8286ED06300565534 /* Debug */,
+				AC4AEDE9286ED06300565534 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC4AEDEA286ED06300565534 /* Build configuration list for PBXNativeTarget "FirebaseLoginScreenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC4AEDEB286ED06300565534 /* Debug */,
+				AC4AEDEC286ED06300565534 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC4AEDED286ED06300565534 /* Build configuration list for PBXNativeTarget "FirebaseLoginScreenUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC4AEDEE286ED06300565534 /* Debug */,
+				AC4AEDEF286ED06300565534 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC4AEDBB286ED06100565534 /* Project object */;
+}
