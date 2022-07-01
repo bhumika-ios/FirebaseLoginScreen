@@ -24,20 +24,51 @@ struct ContentView_Previews: PreviewProvider {
 
 struct Home: View{
     @State var show = false
+    @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     var body: some View{
         NavigationView{
-            ZStack(alignment: .top){
-                NavigationLink(destination: Register(show: self.$show), isActive: self.$show){
-                    Text("")
+            VStack{
+                if self.status{
+                    HomeScreen()
+                }else{
+                    ZStack(alignment: .top){
+                        NavigationLink(destination: Register(show: self.$show), isActive: self.$show){
+                            Text("")
+                        }
+                        .hidden()
+                        Login(show: self.$show)
+                    }
                 }
-                .hidden()
-                Login(show: self.$show)
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
            .navigationBarBackButtonHidden(true)
+           .onAppear{
+               NotificationCenter.default.addObserver(forName: NSNotification.Name("status"), object: nil, queue: .main){ (_) in
+                   self.status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+               }
+           }
         }
        
+    }
+}
+struct HomeScreen : View{
+    var body: some View{
+        VStack{
+            Text("Logged successfully")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(Color.black.opacity(0.7))
+            Button(action: {
+                try! Auth.auth().signOut()
+                UserDefaults.standard.set(false, forKey: "status")
+                NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
+            }) {
+                Text("LogOut")
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.blue)
+            }
+        }
     }
 }
 
@@ -169,6 +200,8 @@ struct Login : View{
                     self.alert.toggle()
                 }
                 print("success")
+                UserDefaults.standard.set(true, forKey: "status")
+                NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
             }
             
         }else{
@@ -188,118 +221,123 @@ struct Register : View{
     @State var error = ""
     @Binding var show : Bool
     var body: some View{
-        ZStack(alignment: .topTrailing){
-                    GeometryReader{_ in
-                        VStack(alignment:.leading){
-                            Text("Create Account")
-                                .font(.system(size: 22).bold())
-                            .padding(.top,175)
-                            .multilineTextAlignment(.center)
-                            Text("Create your Account")
-                                .font(.callout)
-                            
-                            Text(self.error).foregroundColor(.red).font(.system(size: 16))
-                                .padding(.top,1)
-                            Text("Email")
-                                .padding(.top)
-                            TextField("Email", text: $email)
-                                .keyboardType(.emailAddress)
-                                .autocapitalization(.none)
+        ZStack {
+            ZStack(alignment: .topTrailing){
+                        GeometryReader{_ in
+                            VStack(alignment:.leading){
+                                Text("Create Account")
+                                    .font(.system(size: 22).bold())
+                                .padding(.top,175)
+                                .multilineTextAlignment(.center)
+                                Text("Create your Account")
+                                    .font(.callout)
+                                
+                                Text(self.error).foregroundColor(.red).font(.system(size: 16))
+                                    .padding(.top,1)
+                                Text("Email")
+                                    .padding(.top)
+                                TextField("Email", text: $email)
+                                    .keyboardType(.emailAddress)
+                                    .autocapitalization(.none)
+                                    .padding()
+                                    .background(RoundedRectangle(cornerRadius: 4).stroke(self.email != "" ? Color.blue : self.color,lineWidth: 2))
+                                    .padding(.top, 1)
+                               // Text(emailObj.error).foregroundColor(.red).font(.system(size: 13))
+                                Text("Password")
+                                    .padding(.top)
+                                HStack{
+                                    
+                                    VStack{
+                                        
+                                        if self.visible{
+                                            TextField("Password", text: self.$pass)
+                                                .autocapitalization(.none)
+                                        } else{
+                                            SecureField("Password", text: self.$pass)
+                                                .autocapitalization(.none)
+                                        
+                                        }
+                                    }
+                                    Button(action: {
+                                        self.visible.toggle()
+                                    }) {
+                                        Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
+                                            .foregroundColor(self.color)
+                                    }
+                                }
                                 .padding()
-                                .background(RoundedRectangle(cornerRadius: 4).stroke(self.email != "" ? Color.blue : self.color,lineWidth: 2))
+                                .background(RoundedRectangle(cornerRadius: 4).stroke(self.pass != "" ? Color.blue : self.color,lineWidth: 2))
                                 .padding(.top, 1)
-                           // Text(emailObj.error).foregroundColor(.red).font(.system(size: 13))
-                            Text("Password")
-                                .padding(.top)
-                            HStack{
-                                
-                                VStack{
+                                Text("Re-Password")
+                                    .padding(.top)
+                                HStack{
                                     
-                                    if self.visible{
-                                        TextField("Password", text: self.$pass)
-                                            .autocapitalization(.none)
-                                    } else{
-                                        SecureField("Password", text: self.$pass)
-                                            .autocapitalization(.none)
-                                    
+                                    VStack{
+                                        
+                                        if self.revisible{
+                                            TextField("Password", text: self.$repass)
+                                                .autocapitalization(.none)
+                                        } else{
+                                            SecureField("Password", text: self.$repass)
+                                                .autocapitalization(.none)
+                                        
+                                        }
+                                    }
+                                    Button(action: {
+                                        self.revisible.toggle()
+                                    }) {
+                                        Image(systemName: self.revisible ? "eye.slash.fill" : "eye.fill")
+                                            .foregroundColor(self.color)
                                     }
                                 }
-                                Button(action: {
-                                    self.visible.toggle()
-                                }) {
-                                    Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
-                                        .foregroundColor(self.color)
-                                }
-                            }
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 4).stroke(self.pass != "" ? Color.blue : self.color,lineWidth: 2))
-                            .padding(.top, 1)
-                            Text("Re-Password")
-                                .padding(.top)
-                            HStack{
-                                
-                                VStack{
-                                    
-                                    if self.revisible{
-                                        TextField("Password", text: self.$repass)
-                                            .autocapitalization(.none)
-                                    } else{
-                                        SecureField("Password", text: self.$repass)
-                                            .autocapitalization(.none)
-                                    
+                                .padding()
+                                .background(RoundedRectangle(cornerRadius: 4).stroke(self.pass != "" ? Color.blue : self.color,lineWidth: 2))
+                                .padding(.top, 1)
+                               // Text(passObj.error).foregroundColor(.red).font(.system(size: 13))
+                        
+                                    Button {
+                                     
+                                        // check email and password empty
+                                      //  self.verify()
+                                        self.register()
+                                    } label: {
+                                        
+                                    Text("Create")
+                                    .foregroundColor(.white)
+                                    .fontWeight(.semibold)
+                                    .frame(width: 360, height: 50)
+                                    .background(Color.blue)
+                                    .cornerRadius(10)
+    //                                    let accessToken: String? = KeychainWrapper.standard.string(forKey: "accessToken")
+    //                                    if accessToken != nil{
+    //                                        NavigationLink(destination: Text("You are logged in @\($emailObj.email.wrappedValue)"), isActive: $loginApi.isLoginSuccessful) {
+    //                                            EmptyView()
+    //                                        }
+    //                                    }
+                                       
                                     }
-                                }
-                                Button(action: {
-                                    self.revisible.toggle()
-                                }) {
-                                    Image(systemName: self.revisible ? "eye.slash.fill" : "eye.fill")
-                                        .foregroundColor(self.color)
-                                }
-                            }
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 4).stroke(self.pass != "" ? Color.blue : self.color,lineWidth: 2))
-                            .padding(.top, 1)
-                           // Text(passObj.error).foregroundColor(.red).font(.system(size: 13))
-                    
-                                Button {
-                                 
-                                    // check email and password empty
-                                  //  self.verify()
-                                   
-                                } label: {
-                                    
-                                Text("Create")
-                                .foregroundColor(.white)
-                                .fontWeight(.semibold)
-                                .frame(width: 360, height: 50)
-                                .background(Color.blue)
-                                .cornerRadius(10)
-//                                    let accessToken: String? = KeychainWrapper.standard.string(forKey: "accessToken")
-//                                    if accessToken != nil{
-//                                        NavigationLink(destination: Text("You are logged in @\($emailObj.email.wrappedValue)"), isActive: $loginApi.isLoginSuccessful) {
-//                                            EmptyView()
-//                                        }
-//                                    }
-                                   
-                                }
-                            
-                           // .padding(.vertical,25)
-                            
-                        }.padding(.horizontal, 15)
-                    }
-//                    Button{
-//                        self.show.toggle()
-//                        } label: {
-//                           Image(systemName: "chevron.left")
-//                                .font(.title)
-//                                .foregroundColor(Color.blue)
-//                                //.fontWeight(.semibold)
-//
-//
-//                        }
-//                        .padding()
-                   
-                }
+                                
+                               // .padding(.vertical,25)
+                                
+                            }.padding(.horizontal, 15)
+                        }
+    //                    Button{
+    //                        self.show.toggle()
+    //                        } label: {
+    //                           Image(systemName: "chevron.left")
+    //                                .font(.title)
+    //                                .foregroundColor(Color.blue)
+    //                                //.fontWeight(.semibold)
+    //
+    //
+    //                        }
+    //                        .padding()
+                       
+            }
+            if self.alert{
+                ErrorView(alert: self.$alert, error: self.$error)
+            }
+        }
                
 //                if self.alert{
 //                    ErrorView(alert: self.$alert, error: self.$error)
@@ -307,6 +345,19 @@ struct Register : View{
             
              //   .navigationBarBackButtonHidden(true)
        
+    }
+    func register(){
+        if self.email != ""{
+            if self.pass == self.repass{
+                
+            }else{
+                self.error = "Password mismatch"
+                self.alert.toggle()
+            }
+        }else{
+            self.error = "Please fill all the contains properly"
+            self.alert.toggle()
+        }
     }
 }
 struct ErrorView : View{
