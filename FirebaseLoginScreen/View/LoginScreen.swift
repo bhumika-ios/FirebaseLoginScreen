@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct LoginScreen: View {
     @State var isLoginMode = false
     var body: some View {
@@ -18,6 +19,13 @@ struct LoginScreen: View {
                     Text("Create Account")
                         .tag(false)
                 }.pickerStyle(SegmentedPickerStyle())
+                
+                if !isLoginMode {
+                   
+                    Text("Register")
+                }else{
+                    Text("Login")
+                }
             }
         }
        
