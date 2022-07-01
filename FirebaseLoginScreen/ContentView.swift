@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isLogged: Bool = false
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            if self.isLogged{
+                HomeView()
+            }else{
+                LoginScreen()
+            }
+        }
     }
 }
 

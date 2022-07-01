@@ -14,6 +14,8 @@
 		AC4AEDD8286ED06300565534 /* FirebaseLoginScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4AEDD7286ED06300565534 /* FirebaseLoginScreenTests.swift */; };
 		AC4AEDE2286ED06300565534 /* FirebaseLoginScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4AEDE1286ED06300565534 /* FirebaseLoginScreenUITests.swift */; };
 		AC4AEDE4286ED06300565534 /* FirebaseLoginScreenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4AEDE3286ED06300565534 /* FirebaseLoginScreenUITestsLaunchTests.swift */; };
+		AC4AEDF2286ED07F00565534 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4AEDF1286ED07F00565534 /* HomeView.swift */; };
+		AC4AEDF4286ED09000565534 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4AEDF3286ED09000565534 /* LoginScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		AC4AEDDD286ED06300565534 /* FirebaseLoginScreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseLoginScreenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC4AEDE1286ED06300565534 /* FirebaseLoginScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginScreenUITests.swift; sourceTree = "<group>"; };
 		AC4AEDE3286ED06300565534 /* FirebaseLoginScreenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginScreenUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AC4AEDF1286ED07F00565534 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AC4AEDF3286ED09000565534 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		AC4AEDC5286ED06100565534 /* FirebaseLoginScreen */ = {
 			isa = PBXGroup;
 			children = (
+				AC4AEDF0286ED06F00565534 /* View */,
 				AC4AEDC6286ED06100565534 /* FirebaseLoginScreenApp.swift */,
 				AC4AEDC8286ED06100565534 /* ContentView.swift */,
 				AC4AEDCA286ED06300565534 /* Assets.xcassets */,
@@ -125,6 +130,15 @@
 				AC4AEDE3286ED06300565534 /* FirebaseLoginScreenUITestsLaunchTests.swift */,
 			);
 			path = FirebaseLoginScreenUITests;
+			sourceTree = "<group>";
+		};
+		AC4AEDF0286ED06F00565534 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC4AEDF1286ED07F00565534 /* HomeView.swift */,
+				AC4AEDF3286ED09000565534 /* LoginScreen.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4AEDF2286ED07F00565534 /* HomeView.swift in Sources */,
+				AC4AEDF4286ED09000565534 /* LoginScreen.swift in Sources */,
 				AC4AEDC9286ED06100565534 /* ContentView.swift in Sources */,
 				AC4AEDC7286ED06100565534 /* FirebaseLoginScreenApp.swift in Sources */,
 			);
