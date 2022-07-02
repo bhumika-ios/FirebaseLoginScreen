@@ -135,7 +135,7 @@ struct Login : View{
                            // Text(passObj.error).foregroundColor(.red).font(.system(size: 13))
                             HStack{
                                 Button{
-                                
+                                    self.reset()
                                     } label: {
                                         Text("ForgotPassword?")
                                             .foregroundColor(Color.blue)
@@ -210,6 +210,27 @@ struct Login : View{
             self.alert.toggle()
         }
     }
+    func reset(){
+        if self.email != "" {
+            
+            Auth.auth().sendPasswordReset(withEmail: self.email) { (err) in
+                 
+                if err != nil{
+                    self.error = err!.localizedDescription
+                    self.alert.toggle()
+                    return
+                    }
+                self.error = "RESET"
+                self.alert.toggle()
+                }
+                
+            }
+        else{
+            self.error = "Email Id is empty"
+            self.alert.toggle()
+        }
+    }
+
 }
 struct Register : View{
     @State var email = ""
@@ -381,7 +402,7 @@ struct ErrorView : View{
         GeometryReader{_ in
             VStack{
                 HStack{
-                    Text("")
+                    Text(self.error == "RESET" ? "Message" : "")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(self.color)
@@ -390,7 +411,7 @@ struct ErrorView : View{
                 }
                 .padding(.horizontal, 25)
                 
-                Text(self.error)
+                Text(self.error == "RESET" ? "Password reset link has been sent successfully" : self.error)
                     .foregroundColor(Color.black)
                     .padding(.top)
                     .padding(.horizontal,25)
@@ -398,7 +419,7 @@ struct ErrorView : View{
                     self.alert.toggle()
                 }) {
                 
-                    Text("Ok")
+                    Text(self.error == "RESET" ? "Ok" : "Cancel")
                         .foregroundColor(.white)
                         .padding(.vertical)
                         .frame(width: UIScreen.main.bounds.width - 120)
