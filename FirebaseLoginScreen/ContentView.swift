@@ -370,6 +370,7 @@ struct Register : View{
     }
     func register(){
         if self.email != ""{
+            if self.email != email{
             if self.pass == self.repass{
                 Auth.auth().createUser(withEmail: self.email, password: self.pass){ (res, err) in
                     if err != nil{
@@ -386,6 +387,10 @@ struct Register : View{
                 }
             }else{
                 self.error = "Password mismatch"
+                self.alert.toggle()
+            }
+            }else{
+                self.error = "Please used another email id bcoz used email id"
                 self.alert.toggle()
             }
         }else{
