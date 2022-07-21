@@ -105,6 +105,7 @@ struct Login : View{
                 .frame(height: 180)
                 .padding(30)
                 .background(Color.purple)
+                .clipShape(CustomShape(corner: .bottomRight, radii: 50))
                 .edgesIgnoringSafeArea(.top)
                    ZStack{
                             ZStack(alignment: .topTrailing){
@@ -184,7 +185,7 @@ struct Login : View{
                                         .foregroundColor(.white)
                                         .fontWeight(.semibold)
                                         .frame(width: 150, height: 40)
-                                        .background(Color.blue)
+                                        .background(Color.purple)
                                         .cornerRadius(10)
         //                                    let accessToken: String? = KeychainWrapper.standard.string(forKey: "accessToken")
         //                                    if accessToken != nil{
@@ -198,7 +199,7 @@ struct Login : View{
                                     }.padding(.vertical,50)
                                     Divider()
                                         
-                                    HStack(){
+                                    HStack{
                                         
                                         Button {
                                             self.show.toggle()
@@ -210,8 +211,8 @@ struct Login : View{
                                         Text("Don't have an Account? ")
                                                 .foregroundColor(.black)
                                         Text("Register")
-                                        .foregroundColor(.blue)
-                                        // .fontWeight(.semibold)
+                                        .foregroundColor(Color.blue)
+                                         .fontWeight(.semibold)
                                         //.frame(width: 150, height: 40)
                                         //.background(Color.blue)
                                         .cornerRadius(10)
@@ -238,7 +239,7 @@ struct Login : View{
                             ErrorView(alert: self.$alert, error: self.$error)
                         }
                     }
-                    
+                   .offset(y: -220)
                 
             }
           
@@ -422,11 +423,11 @@ struct Register : View{
     }
     func register(){
         if self.email != ""{
-            if self.email != email{
+            //if self.email != email{
             if self.pass == self.repass{
                 Auth.auth().createUser(withEmail: self.email, password: self.pass){ (res, err) in
                     if err != nil{
-                        //self.error = err!.localizedDescription
+                        self.error = err!.localizedDescription
                         self.error = "Create Successfully"
                         self.alert.toggle()
                         
@@ -441,10 +442,10 @@ struct Register : View{
                 self.error = "Password mismatch"
                 self.alert.toggle()
             }
-            }else{
-                self.error = "Please used another email id bcoz used email id"
-                self.alert.toggle()
-            }
+    //   }//else{
+//                self.error = "Please used another email id bcoz used email id"
+//                self.alert.toggle()
+//            }
         }else{
             self.error = "Please fill all the contains properly"
             self.alert.toggle()
@@ -481,7 +482,7 @@ struct ErrorView : View{
                         .padding(.vertical)
                         .frame(width: UIScreen.main.bounds.width - 120)
                 }
-                .background(Color.blue)
+                .background(Color.purple)
                 .cornerRadius(10)
                 .padding(.top,25)
             }
@@ -492,5 +493,15 @@ struct ErrorView : View{
         }.padding(.top,150)
             .padding(.horizontal,35)
         .background(Color.black.opacity(0.35).edgesIgnoringSafeArea(.all))
+    }
+}
+struct CustomShape : Shape {
+    var corner : UIRectCorner
+    var radii : CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corner, cornerRadii: CGSize(width: radii, height: radii))
+        
+        return Path(path.cgPath)
     }
 }
