@@ -18,6 +18,8 @@ struct Login : View{
     @State var alert = false
     @State var error = ""
    @Binding var show : Bool
+    @ObservedObject var emailObj = EmailValidationnobj()
+    @ObservedObject var passObj = PasswordValidationobj()
     var body: some View{
         ZStack{
             Color.white
@@ -47,24 +49,26 @@ struct Login : View{
                             ZStack(alignment: .topTrailing){
                             GeometryReader{_ in
                                 VStack(alignment:.leading){
-                                    Text("Log In")
-                                        .font(.system(size: 22).bold())
-                                    .padding(.top,175)
-                                    .multilineTextAlignment(.center)
-                                    Text("Log in your Account")
-                                        .font(.callout)
+//                                    Text("Log In")
+//                                        .font(.system(size: 22).bold())
+//                                    .padding(.top,175)
+//                                    .multilineTextAlignment(.center)
+//                                    Text("Log in your Account")
+//                                        .font(.callout)
                                     
                                     Text(self.error).foregroundColor(.red).font(.system(size: 16))
                                         .padding(.top,1)
                                     Text("Email")
                                         .padding(.top)
-                                    TextField("Email", text: $email)
+                                    TextField("Email", text: self.$emailObj.email)
                                         .keyboardType(.emailAddress)
                                         .autocapitalization(.none)
                                         .padding()
                                         .background(RoundedRectangle(cornerRadius: 4).stroke(self.email != "" ? Color.blue : self.color,lineWidth: 2))
+                                    
+                                    
                                         .padding(.top, 1)
-                                // Text(emailObj.error).foregroundColor(.red).font(.system(size: 13))
+                                    Text(emailObj.error).foregroundColor(.red).font(.system(size: 13))
                                     Text("Password")
                                         .padding(.top)
                                     HStack{
@@ -72,10 +76,10 @@ struct Login : View{
                                         VStack{
                                             
                                             if self.visible{
-                                                TextField("Password", text: self.$pass)
+                                                TextField("Password", text: self.$passObj.pass)
                                                     .autocapitalization(.none)
                                             } else{
-                                                SecureField("Password", text: self.$pass)
+                                                SecureField("Password", text: self.$passObj.pass)
                                                     .autocapitalization(.none)
                                             
                                             }
@@ -91,7 +95,7 @@ struct Login : View{
                                     
                                     .background(RoundedRectangle(cornerRadius: 4).stroke(self.pass != "" ? Color.blue : self.color,lineWidth: 2))
                                     .padding(.top, 1)
-                                // Text(passObj.error).foregroundColor(.red).font(.system(size: 13))
+                                Text(passObj.error).foregroundColor(.red).font(.system(size: 13))
                                     HStack{
                                         Button{
                                             self.reset()
@@ -175,7 +179,7 @@ struct Login : View{
                             ErrorView(alert: self.$alert, error: self.$error)
                         }
                     }
-                   .offset(y: -220)
+                   .offset(y: -40)
                 
             }
           
@@ -183,7 +187,7 @@ struct Login : View{
     }
     func verify(){
         if self.email != "" && self.pass != ""{
-            Auth.auth().signIn(withEmail: self.email, password: self.pass){ (res, err) in
+            Auth.auth().signIn(withEmail: self.$emailObj.email.wrappedValue, password: self.$passObj.pass.wrappedValue){ (res, err) in
                 if err != nil{
                     self.error = err!.localizedDescription
                     self.alert.toggle()

@@ -20,6 +20,9 @@
 		AC4C4D8128894B6000C44D12 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C4D8028894B6000C44D12 /* Login.swift */; };
 		AC4C4D8328894BF800C44D12 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C4D8228894BF800C44D12 /* ErrorView.swift */; };
 		AC4C4D8528894D4300C44D12 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C4D8428894D4300C44D12 /* HomeScreen.swift */; };
+		AC4C4D8728894E9B00C44D12 /* CustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C4D8628894E9B00C44D12 /* CustomShape.swift */; };
+		AC4C4D8E2889517900C44D12 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C4D8C2889517900C44D12 /* UserAuth.swift */; };
+		AC4C4D8F2889517900C44D12 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C4D8D2889517900C44D12 /* Validation.swift */; };
 		B56EB1836EDB1BDDA1DB5228 /* Pods_FirebaseLoginScreenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4E214C854F8D1AAB05E221 /* Pods_FirebaseLoginScreenTests.framework */; };
 		EF8450D38D2748565290FB10 /* Pods_FirebaseLoginScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBC9A7F47BD3E0D1BB5232 /* Pods_FirebaseLoginScreen.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +67,9 @@
 		AC4C4D8028894B6000C44D12 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		AC4C4D8228894BF800C44D12 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		AC4C4D8428894D4300C44D12 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		AC4C4D8628894E9B00C44D12 /* CustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShape.swift; sourceTree = "<group>"; };
+		AC4C4D8C2889517900C44D12 /* UserAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		AC4C4D8D2889517900C44D12 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		B471F7AF96CDDBD96F0E40B6 /* Pods-FirebaseLoginScreenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseLoginScreenTests.release.xcconfig"; path = "Target Support Files/Pods-FirebaseLoginScreenTests/Pods-FirebaseLoginScreenTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD5F39D432E1790EFB5B0D8B /* Pods-FirebaseLoginScreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseLoginScreen.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseLoginScreen/Pods-FirebaseLoginScreen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +150,7 @@
 		AC4AEDC5286ED06100565534 /* FirebaseLoginScreen */ = {
 			isa = PBXGroup;
 			children = (
+				AC4C4D8B2889517900C44D12 /* Validation */,
 				AC4C4D7D288923E900C44D12 /* View */,
 				AC4AEDF5286F067B00565534 /* GoogleService-Info.plist */,
 				AC4AEDC6286ED06100565534 /* FirebaseLoginScreenApp.swift */,
@@ -186,8 +193,18 @@
 				AC4C4D8028894B6000C44D12 /* Login.swift */,
 				AC4C4D8228894BF800C44D12 /* ErrorView.swift */,
 				AC4C4D8428894D4300C44D12 /* HomeScreen.swift */,
+				AC4C4D8628894E9B00C44D12 /* CustomShape.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AC4C4D8B2889517900C44D12 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				AC4C4D8C2889517900C44D12 /* UserAuth.swift */,
+				AC4C4D8D2889517900C44D12 /* Validation.swift */,
+			);
+			path = Validation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,9 +448,12 @@
 			files = (
 				AC4C4D8328894BF800C44D12 /* ErrorView.swift in Sources */,
 				AC4C4D7F2889240200C44D12 /* Register.swift in Sources */,
+				AC4C4D8E2889517900C44D12 /* UserAuth.swift in Sources */,
 				AC4C4D8528894D4300C44D12 /* HomeScreen.swift in Sources */,
+				AC4C4D8F2889517900C44D12 /* Validation.swift in Sources */,
 				AC4AEDC9286ED06100565534 /* ContentView.swift in Sources */,
 				AC4AEDC7286ED06100565534 /* FirebaseLoginScreenApp.swift in Sources */,
+				AC4C4D8728894E9B00C44D12 /* CustomShape.swift in Sources */,
 				AC4C4D8128894B6000C44D12 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
