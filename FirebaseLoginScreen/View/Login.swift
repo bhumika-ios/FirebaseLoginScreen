@@ -186,7 +186,7 @@ struct Login : View{
         }
     }
     func verify(){
-        if self.email != "" && self.pass != ""{
+        if self.$emailObj.email.wrappedValue != "" && self.$passObj.pass.wrappedValue != ""{
             Auth.auth().signIn(withEmail: self.$emailObj.email.wrappedValue, password: self.$passObj.pass.wrappedValue){ (res, err) in
                 if err != nil{
                     self.error = err!.localizedDescription
@@ -204,9 +204,9 @@ struct Login : View{
         }
     }
     func reset(){
-        if self.email != "" {
+        if self.$emailObj.email.wrappedValue != "" {
             
-            Auth.auth().sendPasswordReset(withEmail: self.email) { (err) in
+            Auth.auth().sendPasswordReset(withEmail: self.$emailObj.email.wrappedValue) { (err) in
                  
                 if err != nil{
                     self.error = err!.localizedDescription

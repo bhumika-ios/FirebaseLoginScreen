@@ -12,7 +12,7 @@ struct HomeScreen : View{
     var body: some View{
         VStack{
             Text("Logged successfully")
-            //Text()
+        //    Text(user.displayName)
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(Color.black.opacity(0.7))
