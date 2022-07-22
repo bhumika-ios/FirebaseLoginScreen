@@ -17,6 +17,9 @@ struct Register : View{
     @State var color = Color.black.opacity(0.7)
     @State var alert = false
     @State var error = ""
+    @ObservedObject var emailObj = EmailValidationnobj()
+    @ObservedObject var passObj = PasswordValidationobj()
+    @ObservedObject var repassObj = RePasswordValidationobj()
     @Binding var show : Bool
     var body: some View{
         ZStack{
@@ -59,18 +62,18 @@ struct Register : View{
 //                                            .multilineTextAlignment(.center)
 //                                            Text("Create your Account")
 //                                                .font(.callout)
-                                            
+                                            Group{
                                             Text(self.error).foregroundColor(.red).font(.system(size: 16))
                                                 .padding(.top,1)
                                             Text("Email")
                                                 .padding(.top)
-                                            TextField("Email", text: $email)
+                                            TextField("Email", text: self.$emailObj.email)
                                                 .keyboardType(.emailAddress)
                                                 .autocapitalization(.none)
                                                 .padding()
                                                 .background(RoundedRectangle(cornerRadius: 4).stroke(self.email != "" ? Color.blue : self.color,lineWidth: 2))
                                                 .padding(.top, 1)
-                                        // Text(emailObj.error).foregroundColor(.red).font(.system(size: 13))
+                                            Text(emailObj.error).foregroundColor(.red).font(.system(size: 13))
                                             Text("Password")
                                                 .padding(.top)
                                             HStack{
@@ -78,10 +81,10 @@ struct Register : View{
                                                 VStack{
                                                     
                                                     if self.visible{
-                                                        TextField("Password", text: self.$pass)
+                                                        TextField("Password", text: self.$passObj.pass)
                                                             .autocapitalization(.none)
                                                     } else{
-                                                        SecureField("Password", text: self.$pass)
+                                                        SecureField("Password", text: self.$passObj.pass)
                                                             .autocapitalization(.none)
                                                     
                                                     }
@@ -96,6 +99,7 @@ struct Register : View{
                                             .padding()
                                             .background(RoundedRectangle(cornerRadius: 4).stroke(self.pass != "" ? Color.blue : self.color,lineWidth: 2))
                                             .padding(.top, 1)
+                                                Text(passObj.error).foregroundColor(.red).font(.system(size: 13))
                                             Text("Re-Password")
                                                 .padding(.top)
                                             HStack{
@@ -103,10 +107,10 @@ struct Register : View{
                                                 VStack{
                                                     
                                                     if self.revisible{
-                                                        TextField("Password", text: self.$repass)
+                                                        TextField("Password", text: self.$repassObj.repass)
                                                             .autocapitalization(.none)
                                                     } else{
-                                                        SecureField("Password", text: self.$repass)
+                                                        SecureField("Password", text: self.$repassObj.repass)
                                                             .autocapitalization(.none)
                                                     
                                                     }
@@ -121,8 +125,10 @@ struct Register : View{
                                             .padding()
                                             .background(RoundedRectangle(cornerRadius: 4).stroke(self.pass != "" ? Color.blue : self.color,lineWidth: 2))
                                             .padding(.top, 1)
-                                        // Text(passObj.error).foregroundColor(.red).font(.system(size: 13))
+                                         Text(repassObj.error).foregroundColor(.red).font(.system(size: 13))
                                             //.padding()
+                                            }
+                                            
                                             VStack{
                                                 Button {
                                                 
@@ -149,6 +155,7 @@ struct Register : View{
                                             .padding(.horizontal,-15)
                                             Divider()
                                                 .padding(.vertical,10)
+                                            
                                             HStack{
                                                 
                                                 Button {
@@ -210,7 +217,7 @@ struct Register : View{
         if self.email != ""{
             //if self.email != email{
             if self.pass == self.repass{
-                Auth.auth().createUser(withEmail: self.email, password: self.pass){ (res, err) in
+                Auth.auth().createUser(withEmail: self.$emailObj.email.wrappedValue, password: self.$passObj.pass.wrappedValue){ (res, err) in
                     if err != nil{
                         self.error = err!.localizedDescription
                         self.error = "Create Successfully"

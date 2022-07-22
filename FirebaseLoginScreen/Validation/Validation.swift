@@ -22,6 +22,22 @@ class EmailValidationnobj: ObservableObject{
     }
     @Published var error = ""
 }
+class RePasswordValidationobj: ObservableObject{
+    @Published var error = ""
+    @Published var repass = "" {
+        didSet {
+            if self.repass.isEmpty{
+                self.error = "Required"
+            }
+//            else if !self.repass.isPassword(){
+//                self.error = "InValid RePassword"
+//            }
+            else {
+                self.error = ""
+            }
+        }
+    }
+}
 
 class PasswordValidationobj: ObservableObject{
     @Published var pass = "" {
@@ -66,6 +82,7 @@ class PasswordValidationobj: ObservableObject{
     }
     
 }
+
 extension String {
     func isValidEmail()-> Bool {
         let emailRegEx = "(?:[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}" +
